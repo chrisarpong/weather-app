@@ -1,0 +1,236 @@
+:root {
+    --bg-day: linear-gradient(135deg, #72edf2, #5151e5);
+    --bg-night: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --card-bg-light: rgba(255, 255, 255, 0.2);
+    --card-bg-dark: rgba(0, 0, 0, 0.2);
+    --icon-day: #f9d71c;
+    --icon-night: #c9c9c9;
+}
+
+/* Dark/Light Mode Classes */
+.dark-mode {
+    background: var(--bg-night) !important;
+    color: var(--text-light);
+}
+
+.light-mode {
+    background: var(--bg-day) !important;
+    color: var(--text-dark);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-day);
+    color: var(--text-light);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+}
+
+.container {
+    background: var(--card-bg-light);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.search-box button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    background: #5151e5;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #3a3ac7;
+}
+
+.main-weather {
+    color: inherit;
+    text-align: center;
+}
+
+.location h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.location p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.current-weather {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.temp-container {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.unit-toggle {
+    font-size: 1.5rem;
+    vertical-align: super;
+    margin-left: 5px;
+}
+
+.unit-toggle span {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.unit-toggle span.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.condition img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.condition p {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.forecast {
+    margin-top: 30px;
+}
+
+.forecast h3 {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.forecast-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.forecast-day {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .location h1 {
+        font-size: 2rem;
+    }
+    
+    .temp-container {
+        font-size: 3rem;
+    }
+    
+    .current-weather {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

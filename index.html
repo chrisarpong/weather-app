@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Genie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-btn"><i class="fas fa-moon"></i></button>
+    </div>
+    
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="Search for a city..." id="search-input">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="main-weather">
+            <div class="location">
+                <h1 id="city">--</h1>
+                <p id="country">--</p>
+                <p id="local-time">--</p>
+            </div>
+            
+            <div class="current-weather">
+                <div class="temp-container">
+                    <span id="temperature">--</span>
+                    <span class="unit-toggle">
+                        <span id="celsius" class="active">°C</span>
+                        <span id="fahrenheit">°F</span>
+                    </span>
+                </div>
+                
+                <div class="condition animate__animated animate__fadeIn">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <p id="weather-description">--</p>
+                </div>
+            </div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <i class="fas fa-tint"></i>
+                    <p>Humidity: <span id="humidity">--</span>%</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-wind"></i>
+                    <p>Wind: <span id="wind">--</span> km/h</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-eye"></i>
+                    <p>Visibility: <span id="visibility">--</span> km</p>
+                </div>
+            </div>
+            
+            <div class="forecast">
+                <h3>3-Day Forecast</h3>
+                <div class="forecast-days" id="forecast-container">
+                    <!-- Forecast items will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
